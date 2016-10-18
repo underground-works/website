@@ -1,0 +1,11 @@
+{% extends 'layout' %}
+
+{% block content %}
+	<article class="section docs">
+
+		<div class="section-content">
+			{{ document.html()|raw }}
+		</div>
+
+	</article>
+{% endblock %}

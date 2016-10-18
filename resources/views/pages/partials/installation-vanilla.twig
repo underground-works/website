@@ -1,0 +1,42 @@
+<p>Install the Clockwork library via <a href="https://getcomposer.org/">Composer</a>.</p>
+
+<code class="block">$ composer require itsgoingd/clockwork</code>
+
+<p>Early in your application process set up a new Clockwork instance.</p>
+
+<code class="block">$clockwork = new Clockwork\Clockwork;</code>
+
+<p>Add any desired data sources, in this example we add only the most basic <code>PhpDataSource</code>. Clockwork provides various data sources out of the box and you can always write your own.</p>
+
+<code class="block">$clockwork->addDataSource(new Clockwork\DataSource\PhpDataSource);</code>
+
+<p>Set up a Clockwork storage instance, in this example we set up an <code>SqlStorage</code> using an Sqlite database. Clockwork also provides a <code>FileStorage</code>, using flat files to store the metadata or you can always write your own implementation.</p>
+
+<code class="block">$storage = new Clockwork\Storage\SqlStorage('sqlite:' . __DIR__ . '/clockwork.sqlite');
+$storage->initialize();
+
+$clockwork->setStorage($storage);
+</code>
+
+<p>Right before sending a response, we need to tell Clockwork to resolve and store metadata for current request.</p>
+
+<code class="block">$clockwork->resolveRequest()->storeRequest();
+
+header('X-Clockwork-Id: ' . $clockwork->getRequest()->id);
+header('X-Clockwork-Version: ' . Clockwork\Clockwork::VERSION);
+</code>
+
+<p>By default, Clockwork clients expect the metadata to be available on the URI <code>/__clockwork/{requestId}</code>. We can set a custom URI by setting a <code>X-Clockwork-Path</code> header, request ID is always appended to the end of the URI, in this example we have a very simple app that doesn't even use a router, so we set it in a way a <code>clockwork.php</code> script is executed with the request ID available as <code>id</code> in the query string.</p>
+
+<code class="block">header('X-Clockwork-Path:' . '/clockwork.php?id=');</code>
+
+<p>Finally, we need to set up the metadata providing script, in our example it would be the <code>clockwork.php</code> script. All we need to do is create a new Clockwork instance, set up the storage, retrieve the request metadata for the provided ID from the Clockwork storage and return them with a proper Content-Type.</p>
+
+<code class="block">$clockwork = new Clockwork\Clockwork;
+
+$clockwork->setStorage(new Clockwork\Storage\SqlStorage('sqlite:clockwork.sqlite'));
+
+header('Content-Type', 'application/json');
+
+echo $clockwork->getStorage()->retrieve($_GET['id'])->toJson();
+</code>

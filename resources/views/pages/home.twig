@@ -1,0 +1,128 @@
+{% extends 'layout' %}
+
+{% set noHeader = true %}
+
+{% block content %}
+	<header>
+		<div class="screenshots">
+			<div class="screenshot screenshot-1"></div>
+			<div class="screenshot screenshot-2"></div>
+			<div class="screenshot screenshot-3"></div>
+			<div class="screenshot screenshot-4"></div>
+			<div class="screenshot screenshot-5"></div>
+		</div>
+
+		<div class="intro">
+			<nav>
+				<ul>
+					<li><a href="{{ route('home', '#installation') }}">installation</a></li>
+					<li><a href="{{ route('changelog') }}">changelog</a></li>
+				</ul>
+			</nav>
+
+			<span>
+				<h1>Clockwork</h1>
+				<h2>php dev tools integrated to your browser</h2>
+			</span>
+
+			<ul class="bottom">
+				<li class="github"><a href="https://github.com/itsgoingd/clockwork"><i class="icon-github-circled"></i></a></li>
+				<li class="ugd"><a href="https://underground.works">w</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<article class="content">
+
+		<section class="introduction">
+			<div class="section-content">
+				<div class="section-heading">
+					<h3>What's Clockwork?</h3>
+				</div>
+
+				<div class="section-text">
+					<p>Clockwork is a browser extension, providing tools for debugging and profiling your PHP applications, including information about requests, cookies, session data, database queries, routes, visualisation of application runtime and more.</p>
+
+					<p>Clockwork uses a server-side component, that gathers all the data and easily integrates to any PHP project, including out-of-the-box support for major frameworks.</p>
+
+					<p><b>Try it out!</b> This very website has Clockwork installed, <a href="https://chrome.google.com/webstore/detail/clockwork/dmggabnehkmmfmdffgajcflpdjlnoemp">download the extension</a> and try it out before adding support to your own applications.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="installation" id="installation">
+			<div class="section-content">
+				<div class="section-heading">
+					<h3>Installation</h3>
+
+					<ul class="installation-framework">
+						<li><a href="#installation-laravel-5" class="selected">Laravel 5</a></li>
+						<li><a href="#installation-laravel-4">Laravel 4</a></li>
+						<li><a href="#installation-slim-2">Slim 2</a></li>
+						<li><a href="#installation-codeigniter-21">Codeigniter 2.1</a></li>
+						<li><a href="#installation-vanilla">Vanilla PHP</a></li>
+					</ul>
+				</div>
+
+				<div class="section-text installation-laravel-5">
+					{% include 'pages/partials/installation-laravel-5' %}
+				</div>
+
+				<div class="section-text installation-laravel-4 hidden">
+					{% include 'pages/partials/installation-laravel-4' %}
+				</div>
+
+				<div class="section-text installation-lumen hidden">
+					{% include 'pages/partials/installation-lumen' %}
+				</div>
+
+				<div class="section-text installation-slim-2 hidden">
+					{% include 'pages/partials/installation-slim-2' %}
+				</div>
+
+				<div class="section-text installation-codeigniter-21 hidden">
+					{% include 'pages/partials/installation-codeigniter-21' %}
+				</div>
+
+				<div class="section-text installation-vanilla hidden">
+					{% include 'pages/partials/installation-vanilla' %}
+				</div>
+			</div>
+		</section>
+
+		<section class="links">
+			<div class="section-content">
+				<div class="section-heading">
+					<h3>Community</h3>
+				</div>
+
+				<div class="section-text">
+					<p>Clockwork is an <b>open-source</b> project, check it out over at <a href="https://github.com/itsgoingd/clockwork"><i class="icon-github-circled"></i>GitHub</a>.</p>
+
+					<p>Some of the amazing community contributions:</p>
+
+					<ul>
+						<li><a href="https://github.com/hannesvdvreken/guzzle-clockwork">Guzzle Clockwork middleware</a> - Guzzle middleware for logging requests to Clockwork with Laravel support by <a href="https://github.com/hannesvdvreken">Hannes Van De Vreken</a></li>
+						<li><a href="https://github.com/markguinn/silverstripe-clockwork">SilverStripe Clockwork Integration</a> - Clockwork integration for SilverStripe CMS/framework by <a href="https://github.com/markguinn">Mark Guinn</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="https://github.com/ptrofimov/clockwork-cli">Clockwork CLI client</a> - Command-line interface for Clockwork by <a href="https://github.com/ptrofimov">Petr Trofimov</a></li>
+						<li><a href="https://github.com/sidorovich/clockwork-firebug">Clockwork Firebug Extension</a> - Firebug extension with similar features as the official Chrome extension by <a href="https://github.com/sidorovich">Pavel Sidorovich</a></li>
+					</ul>
+
+					<ul>
+						<li><a href="https://github.com/barryvdh/laravel-debugbar">Laravel Debugbar</a> - integrates PHP Debug Bar for Laravel, includes Clockwork support</li>
+						<li><a href="http://www.laraveldoctrine.org/">Laravel Doctrine</a> - a drop-in Doctrine2 implementation for Laravel 5+, includes Clockwork support</li>
+					</ul>
+
+					<p>All contributions are greatly appreciated, be it code, documentation, bug reports or feature requests, <b>thank you!</b></p>
+				</div>
+			</div>
+		</section>
+	</article>
+{% endblock %}
+
+{% block scripts %}
+	<script>$(function(){ new HomeView })</script>
+{% endblock %}

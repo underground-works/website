@@ -1,0 +1,32 @@
+<p>Install the Clockwork library via <a href="https://getcomposer.org/">Composer</a>.</p>
+
+<code class="block">$ composer require itsgoingd/clockwork</code>
+
+<p>Once Clockwork is installed, you need to copy the Clockwork controller from <code>vendor/itsgoingd/clockwork/Clockwork/Support/CodeIgniter/Clockwork.php</code> to your controllers directory and set up the following route:</p>
+
+<code class="block">$route['__clockwork/(.*)'] = 'clockwork/$1';</code>
+
+<p>Finally, you need to set up the Clockwork hooks by adding following to your <code>application/config/hooks.php</code> file:</p>
+
+<code class="block">Clockwork\Support\CodeIgniter\Register::registerHooks($hook);</code>
+
+<p>To use Clockwork within your controllers/models/etc. you will need to extend your CI_Controller class. (If you haven't done so already) Create a new file at <code>application/core/MY_Controller.php</code>.</p>
+
+<code class="block">class MY_Controller extends CI_Controller
+{
+	public function __construct()
+	{
+		parent::__construct();
+		$GLOBALS['EXT']->_call_hook('pre_controller_constructor');
+	}
+}
+</code>
+
+<p>Now you can use the following commands in your CodeIgniter app:</p>
+
+<code class="block">$this->clockwork->startEvent('event_name', 'Event description.'); // event called 'Event description.' appears in Clockwork timeline tab
+
+$this->clockwork->info('Message text.'); // 'Message text.' appears in Clockwork log tab
+
+$this->clockwork->endEvent('event_name');
+</code>

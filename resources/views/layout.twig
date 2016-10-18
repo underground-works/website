@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ title ?: 'Clockwork' }}</title>
+	<link rel="stylesheet" href="{{ elixir('assets/app.css') }}">
+</head>
+
+<body>
+
+	{% if not noHeader %}
+		<nav>
+			<ul>
+				<li><a href="{{ route('home', '#installation') }}">installation</a></li>
+				<li><a href="{{ route('changelog') }}">changelog</a></li>
+				<li class="github"><a href="https://github.com/itsgoingd/clockwork"><i class="icon-github-circled"></i></a></li>
+				<li class="ugd"><a href="https://underground.works">w</a></li>
+			</ul>
+		</nav>
+	{% endif %}
+
+	{% block content %}{% endblock %}
+
+	<script src="{{ elixir('assets/app-vendor.js') }}"></script>
+	<script src="{{ elixir('assets/app.js') }}"></script>
+
+	{% block scripts %}{% endblock %}
+
+</body>
+
+</html>
