@@ -1,6 +1,6 @@
 <?php namespace App\Support\Markdown;
 
-use Parsedown;
+use App\Support\Markdown\Parsedown\Parsedown;
 
 class ParsedownParser implements Parser
 {

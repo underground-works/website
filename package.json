@@ -10,6 +10,8 @@
     "laravel-elixir-coffeeify": "^1.0.0"
   },
   "dependencies": {
-    "jquery": "^3.0.0"
+    "breakpoint-sass": "^2.7.1",
+    "coffeeify": "^2.1.0",
+    "jquery": "^3.2.1"
   }
 }

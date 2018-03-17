@@ -1,14 +1,16 @@
 {
-    "name": "itsgoingd/clockwork-website",
-    "description": "Website for Clockwork, a browser extension, providing tools for debugging and profiling your PHP applications.",
+    "name": "ugd/website",
+    "description": "underground.works website",
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "laravel/framework": "5.3.*",
+        "laravel/framework": "5.4.*",
         "itsgoingd/clockwork": "^1.12",
         "rcrowe/twigbridge": "^0.9.2",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "symfony/yaml": "^3.2",
+        "jenssegers/agent": "^2.5"
     },
     "autoload": {
         "psr-4": {

@@ -1,9 +1,9 @@
-@import 'base';
+@import 'node_modules/breakpoint-sass/stylesheets/_breakpoint';
 
+@import 'variables';
+
+@import 'base';
 @import 'layout';
 
-@import 'fonts/fontello';
-
-@import 'pages/changelog';
-@import 'pages/docs';
+@import 'pages/blog';
 @import 'pages/home';

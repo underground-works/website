@@ -1,0 +1,26 @@
+{% extends 'layout' %}
+
+{% block content %}
+
+<div class="blog limited-width">
+	{% for post in posts %}
+		<article class="post">
+			<a href="{{ route('blog post', post.slug) }}" class="title">
+				<h1>{{ post.title }}</h1>
+				<small>{{ post.date }}</small>
+			</a>
+
+			{% include 'partials.blog-authors' %}
+
+			<p>{{ post.perex|raw }}</p>
+
+			<p>
+				<a href="{{ route('blog post', post.slug) }}">
+					Read more &gt;
+				</a>
+			</p>
+		</article>
+	{% endfor %}
+</div>
+
+{% endblock %}

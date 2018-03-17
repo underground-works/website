@@ -1,0 +1,71 @@
+.blog {
+	.post {
+		line-height: 1.7;
+		margin: 50px 0 80px;
+
+		.title {
+			color: #000;
+			line-height: 1.2;
+
+			&:hover {
+				text-decoration: none;
+
+				h1 {
+					text-decoration: underline;
+				}
+			}
+
+			h1 {
+				display: inline;
+				font-size: 170%;
+				font-weight: 300;
+				margin-right: 6px;
+			}
+
+			small {
+				color: #555;
+				font-size: 90%;
+				white-space: nowrap;
+			}
+		}
+
+		.authors {
+			font-size: 95%;
+			list-style: none;
+			margin: 5px 0 25px;
+			padding: 0;
+
+			li {
+				display: inline-block;
+
+				img {
+					border-radius: 50%;
+					margin-right: 6px;
+					vertical-align: middle;
+					width: 30px;
+				}
+			}
+		}
+	}
+
+	.post-detail {
+		.title {
+			h1 {
+				font-size: 240%;
+				font-weight: 200;
+			}
+
+			small {
+				font-size: 100%;
+			}
+		}
+
+		p {
+			margin-bottom: 1.75em;
+		}
+
+		img {
+			max-width: 100%;
+		}
+	}
+}

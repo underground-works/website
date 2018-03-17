@@ -1,0 +1,11 @@
+<ul class="authors">
+	{% for author in post.authors %}
+		<li>
+			<img src="{{ author.imageUrl }}">
+			{{ author.name }}
+			{% if author.twitter %}
+				(<a href="https://twitter.com/{{ author.twitter }}">{{ author.twitter }}</a>)
+			{% endif %}
+		</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+{% extends 'layout' %}
+
+{% block content %}
+<article class="home-block home-block-clockwork">
+	<h1>Clockwork</h1>
+	<h2>php dev tools integrated to your browser</h2>
+
+	<a href="/clockwork">
+		<img src="{{ asset(clockworkScreenshotsPath ~ '/' ~ random([ 1, 2, 3 ]) ~ '.png') }}" alt="Clockwork screenshot">
+	</a>
+
+	<p class="more"><a href="/clockwork">read more &gt;</a></p>
+</article>
+
+<article class="home-block home-block-createdBy">
+	<strong>Created by</strong>
+	<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
+	Miroslav Rigler
+	<a href="https://twitter.com/itsgoingd">(@itsgoingd)</a>
+</article>
+{% endblock %}

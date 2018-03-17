@@ -3,29 +3,44 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>{{ title ?: 'Clockwork' }}</title>
+	<title>underground.works</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{ elixir('assets/app.css') }}">
 </head>
 
 <body>
 
-	{% if not noHeader %}
+	<header class="site-header limited-width">
+		<h1>underground.<del>works</del></h1>
+
 		<nav>
 			<ul>
-				<li><a href="{{ route('home', '#installation') }}">installation</a></li>
-				<li><a href="{{ route('changelog') }}">changelog</a></li>
-				<li class="github"><a href="https://github.com/itsgoingd/clockwork"><i class="icon-github-circled"></i></a></li>
-				<li class="ugd"><a href="https://underground.works">w</a></li>
+				<li><a href="/">home</a></li>
+				<li><a href="/blog">blog</a></li>
 			</ul>
 		</nav>
-	{% endif %}
+	</header>
 
 	{% block content %}{% endblock %}
+
+	<footer class="site-footer limited-width">
+		info@underground.works
+	</footer>
 
 	<script src="{{ elixir('assets/app-vendor.js') }}"></script>
 	<script src="{{ elixir('assets/app.js') }}"></script>
 
 	{% block scripts %}{% endblock %}
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-98320971-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
 
 </body>
 

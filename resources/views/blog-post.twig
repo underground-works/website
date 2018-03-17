@@ -1,0 +1,18 @@
+{% extends 'layout' %}
+
+{% block content %}
+
+<div class="blog limited-width">
+	<article class="post post-detail">
+		<div class="title">
+			<h1>{{ post.title }}</h1>
+			<small>{{ post.date }}</small>
+		</div>
+
+		{% include 'partials.blog-authors' %}
+
+		{{ post.content|raw }}
+	</article>
+</div>
+
+{% endblock %}

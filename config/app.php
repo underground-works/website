@@ -151,7 +151,7 @@ return [
         TwigBridge\ServiceProvider::class,
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,
 
-        App\Documentation\DocumentationServiceProvider::class,
+        App\Blog\BlogServiceProvider::class,
         App\Http\RouteServiceProvider::class
 
     ],

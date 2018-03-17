@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/',          [ 'as' => 'home',      'uses' => 'HomeController@index' ]);
-Route::get('/changelog', [ 'as' => 'changelog', 'uses' => 'ChangelogController@index' ]);
+$router->get('/', 'HomeController@index')->name('home');
 
-Route::get('/docs/{slug}', [ 'as' => 'documentation', 'uses' => 'DocsController@index' ]);
+$router->get('blog',        'BlogController@index')->name('blog');
+$router->get('blog/{post}', 'BlogController@show' )->name('blog post');
