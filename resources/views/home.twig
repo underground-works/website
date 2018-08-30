@@ -13,9 +13,26 @@
 </article>
 
 <article class="home-block home-block-createdBy">
-	<strong>Created by</strong>
-	<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
-	Miroslav Rigler
-	<a href="https://twitter.com/itsgoingd">(@itsgoingd)</a>
+	<div class="limited-width">
+		<h1>Created by</h1>
+		<div class="author">
+			<div>
+				<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
+			</div>
+			<div>
+				Miroslav Rigler<br>
+				<a href="https://twitter.com/itsgoingd">@itsgoingd</a>
+			</div>
+		</div>
+		<div class="author">
+			<div>
+				<img src="{{ asset('images/octocat.jpg') }}" class="avatar">
+			</div>
+			<div>
+				and <strong>44</strong> contributors<br>
+				on GitHub
+			</div>
+		</div>
+	</div>
 </article>
 {% endblock %}

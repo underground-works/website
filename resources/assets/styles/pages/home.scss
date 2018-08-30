@@ -26,9 +26,14 @@
 }
 
 .home-block-createdBy {
-	font-size: 115%;
 	margin-top: 100px;
-	text-align: center;
+
+	h1 {
+		font-size: 120%;
+		font-weight: 600;
+		margin-bottom: 50px;
+		text-align: center;
+	}
 
 	strong {
 		font-weight: 500;
@@ -36,8 +41,18 @@
 
 	.avatar {
 		border-radius: 50%;
-		margin: 0 6px;
+		margin: 0 16px 0 6px;
 		vertical-align: middle;
 		width: 48px;
+	}
+
+	.author {
+		align-items: center;
+		display: flex;
+		margin-bottom: 30px;
+	}
+
+	.limited-width {
+		max-width: 600px;
 	}
 }

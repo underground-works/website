@@ -67,5 +67,14 @@
 		img {
 			max-width: 100%;
 		}
+
+		.label-beta {
+			background: rgb(231, 35, 88);
+			border-radius: 3px;
+			color: hsl(343, 80%, 92%);
+			font-size: 70%;
+			padding: 2px 4px;
+			text-transform: uppercase;
+		}
 	}
 }
