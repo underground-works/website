@@ -6,31 +6,32 @@
 	<h2>php dev tools integrated to your browser</h2>
 
 	<a href="/clockwork">
-		<img src="{{ asset(clockworkScreenshotsPath ~ '/' ~ random([ 1, 2, 3 ]) ~ '.png') }}" alt="Clockwork screenshot">
+		{# <img src="{{ asset(clockworkScreenshotsPath ~ '/' ~ random([ 1, 2, 3 ]) ~ '.png') }}" alt="Clockwork screenshot"> #}
+		<img src="{{ asset('images/clockwork/clockwork.png') }}" alt="Clockwork screenshot">
 	</a>
-
-	<p class="more"><a href="/clockwork">read more &gt;</a></p>
 </article>
 
 <article class="home-block home-block-createdBy">
 	<div class="limited-width">
 		<h1>Created by</h1>
-		<div class="author">
-			<div>
-				<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
+		<div class="authors">
+			<div class="author">
+				<div>
+					<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
+				</div>
+				<div>
+					Miroslav Rigler<br>
+					<a href="https://twitter.com/itsgoingd">@itsgoingd</a>
+				</div>
 			</div>
-			<div>
-				Miroslav Rigler<br>
-				<a href="https://twitter.com/itsgoingd">@itsgoingd</a>
-			</div>
-		</div>
-		<div class="author">
-			<div>
-				<img src="{{ asset('images/octocat.jpg') }}" class="avatar">
-			</div>
-			<div>
-				and <strong>44</strong> contributors<br>
-				on GitHub
+			<div class="author">
+				<div>
+					<img src="{{ asset('images/octocat.jpg') }}" class="avatar">
+				</div>
+				<div>
+					and <strong>47</strong> contributors<br>
+					on GitHub
+				</div>
 			</div>
 		</div>
 	</div>
