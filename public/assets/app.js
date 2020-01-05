@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/scripts/app.coffee":
-/*!*********************************************!*\
-  !*** ./resources/assets/scripts/app.coffee ***!
-  \*********************************************/
+/***/ "./resources/assets/scripts/app.js":
+/*!*****************************************!*\
+  !*** ./resources/assets/scripts/app.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3Jlc291cmNlcy9hc3NldHMvc2NyaXB0cy9hcHAuY29mZmVlLmpzIiwic291cmNlc0NvbnRlbnQiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/assets/scripts/app.coffee\n");
+eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3Jlc291cmNlcy9hc3NldHMvc2NyaXB0cy9hcHAuanMuanMiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/assets/scripts/app.js\n");
 
 /***/ }),
 
@@ -104,19 +104,19 @@ eval("\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;chars
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL3N0eWxlcy9hcHAuc2Nzcz9kZTFmIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL2Fzc2V0cy9zdHlsZXMvYXBwLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyByZW1vdmVkIGJ5IGV4dHJhY3QtdGV4dC13ZWJwYWNrLXBsdWdpbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/assets/styles/app.scss\n");
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL3N0eWxlcy9hcHAuc2Nzcz82ZDA3Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL2Fzc2V0cy9zdHlsZXMvYXBwLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyByZW1vdmVkIGJ5IGV4dHJhY3QtdGV4dC13ZWJwYWNrLXBsdWdpbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/assets/styles/app.scss\n");
 
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************!*\
-  !*** multi ./resources/assets/scripts/app.coffee ./resources/assets/styles/app.scss ***!
-  \**************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** multi ./resources/assets/scripts/app.js ./resources/assets/styles/app.scss ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/its/Projects/underground.works/Web/Code/resources/assets/scripts/app.coffee */"./resources/assets/scripts/app.coffee");
-module.exports = __webpack_require__(/*! /Users/its/Projects/underground.works/Web/Code/resources/assets/styles/app.scss */"./resources/assets/styles/app.scss");
+__webpack_require__(/*! /Users/its/Projects/underground.works/underground.works/resources/assets/scripts/app.js */"./resources/assets/scripts/app.js");
+module.exports = __webpack_require__(/*! /Users/its/Projects/underground.works/underground.works/resources/assets/styles/app.scss */"./resources/assets/styles/app.scss");
 
 
 /***/ })
