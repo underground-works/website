@@ -1,14 +1,21 @@
 .home-block-clockwork {
-	text-align: center;
-
 	h1 {
-		font-size: 240%;
+		font-size: 210%;
 		margin-bottom: 0;
+
+		@include breakpoint($tablet-screen) {
+			padding: 0 35px;
+		}
 	}
 
 	h2 {
-		font-size: 150%;
+		font-size: 120%;
+		margin-bottom: 8px;
 		margin-top: 0;
+
+		@include breakpoint($tablet-screen) {
+			padding: 0 35px;
+		}
 	}
 
 	img {
@@ -31,9 +38,12 @@
 
 	h1 {
 		font-size: 120%;
-		font-weight: 600;
+		font-weight: 500;
 		margin-bottom: 20px;
-		text-align: center;
+
+		@include breakpoint($tablet-screen) {
+			padding: 0 35px;
+		}
 	}
 
 	strong {
@@ -42,7 +52,7 @@
 
 	.avatar {
 		border-radius: 50%;
-		margin: 0 16px 0 6px;
+		margin: 0 6px;
 		vertical-align: middle;
 		width: 48px;
 	}
@@ -50,15 +60,24 @@
 	.author {
 		align-items: center;
 		display: flex;
-		margin-bottom: 30px;
-	}
+		line-height: 1.33;
+		margin-bottom: 15px;
 
-	.limited-width {
-		max-width: 600px;
+		&.wide {
+			min-width: 180px;
+		}
+
+		&.with-contributions {
+			justify-content: flex-end;
+			padding-right: 6px;
+			text-align: right;
+		}
 	}
 
 	.authors {
 		display: flex;
-		justify-content: space-around;
+		flex-wrap: wrap;
+		max-width: 960px;
+		width: 98%;
 	}
 }

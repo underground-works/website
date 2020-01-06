@@ -11,6 +11,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        Commands\RefreshContributors::class
     ];
 
     /**
@@ -21,5 +22,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->weekly('contributors:refresh');
     }
 }

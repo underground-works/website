@@ -178,6 +178,10 @@ return [
             'mix',
             'head',
             'last',
+            'includeAsset' => [
+                'is_safe' => ['html'],
+                'callback' => '\App\Support\Twig\Helpers@includeAsset'
+            ],
         ],
 
         /*

@@ -1,7 +1,7 @@
 {% extends 'layout' %}
 
 {% block content %}
-<article class="home-block home-block-clockwork">
+<article class="home-block home-block-clockwork limited-width">
 	<h1>Clockwork</h1>
 	<h2>php dev tools integrated to your browser</h2>
 
@@ -14,26 +14,35 @@
 <article class="home-block home-block-createdBy">
 	<div class="limited-width">
 		<h1>Created by</h1>
-		<div class="authors">
-			<div class="author">
-				<div>
+	</div>
+
+	<div class="authors limited-width">
+		<div class="author wide">
+			<div>
+				<a href="https://github.com/itsgoingd" target="_blank">
 					<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
-				</div>
-				<div>
-					Miroslav Rigler<br>
-					<a href="https://twitter.com/itsgoingd">@itsgoingd</a>
-				</div>
+				</a>
 			</div>
-			<div class="author">
-				<div>
-					<img src="{{ asset('images/octocat.jpg') }}" class="avatar">
-				</div>
-				<div>
-					and <strong>47</strong> contributors<br>
-					on GitHub
-				</div>
+			<div>
+				Miroslav Rigler<br>
+				<a href="https://twitter.com/itsgoingd">@itsgoingd</a>
 			</div>
 		</div>
+		<div class="author wide with-contributions">
+			<div>
+				with contributions<br>
+				by
+			</div>
+		</div>
+		{% for contributor in contributors %}
+			<div class="author">
+				<div>
+					<a href="{{ contributor.url }}" target="_blank">
+						<img src="{{ contributor.avatarUrl }}" class="avatar" title="{{ contributor.userName }}">
+					</a>
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 </article>
 {% endblock %}

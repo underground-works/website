@@ -11,11 +11,12 @@
 <body>
 
 	<header class="site-header limited-width">
-		<h1>underground.<del>works</del></h1>
+		<a href="/">
+			<h1>underground.<del>works</del></h1>
+		</a>
 
 		<nav>
 			<ul>
-				<li><a href="/">home</a></li>
 				<li><a href="/blog">blog</a></li>
 			</ul>
 		</nav>
@@ -24,7 +25,21 @@
 	{% block content %}{% endblock %}
 
 	<footer class="site-footer limited-width">
-		info@underground.works
+		<a href="/">
+			<h1>underground.<del>works</del></h1>
+		</a>
+
+		<div class="contact-info">
+			<a href="https://twitter.com/itsgoingd" target="_blank">
+				{{ includeAsset('images/twitter.svg') }}
+			</a>
+
+			<a href="https://github.com/underground-works" target="_blank">
+				{{ includeAsset('images/github.svg') }}
+			</a>
+
+			info@underground.works
+		</div>
 	</footer>
 
 	<script src="{{ mix('assets/app.js') }}"></script>
