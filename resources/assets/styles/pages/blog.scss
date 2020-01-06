@@ -3,6 +3,17 @@
 		line-height: 1.7;
 		margin: 50px 0 80px;
 
+		.metadata {
+			align-items: flex-end;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.date {
+			color: #555;
+			font-size: 90%;
+		}
+
 		.title {
 			color: #000;
 			line-height: 1.2;
@@ -16,27 +27,22 @@
 			}
 
 			h1 {
-				display: inline;
-				font-size: 170%;
-				font-weight: 300;
-				margin-right: 6px;
-			}
-
-			small {
-				color: #555;
-				font-size: 90%;
-				white-space: nowrap;
+				font-size: 140%;
+				font-weight: 400;
+				margin: 20px 0;
 			}
 		}
 
 		.authors {
-			font-size: 95%;
+			font-size: 90%;
 			list-style: none;
-			margin: 5px 0 25px;
+			margin: 0;
 			padding: 0;
 
 			li {
-				display: inline-block;
+				align-items: center;
+				display: flex;
+				line-height: 1.1;
 
 				img {
 					border-radius: 50%;
@@ -45,18 +51,26 @@
 					width: 30px;
 				}
 			}
+
+			.twitter {
+				font-size: 90%;
+			}
+		}
+
+		.read-more {
+			font-size: 85%;
+			font-weight: 400;
+			text-transform: uppercase;
 		}
 	}
 
 	.post-detail {
+		margin-top: 30px;
+
 		.title {
 			h1 {
-				font-size: 240%;
-				font-weight: 200;
-			}
-
-			small {
-				font-size: 100%;
+				font-size: 185%;
+				margin: 30px 0;
 			}
 		}
 

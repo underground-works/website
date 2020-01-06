@@ -5,18 +5,20 @@
 <div class="blog limited-width">
 	{% for post in posts %}
 		<article class="post">
+			<div class="metadata">
+				<span class="date">{{ post.date.format('l, F jS Y') }}</span>
+				{% include 'partials.blog-authors' %}
+			</div>
+
 			<a href="{{ route('blog post', post.slug) }}" class="title">
 				<h1>{{ post.title }}</h1>
-				<small>{{ post.date }}</small>
 			</a>
-
-			{% include 'partials.blog-authors' %}
 
 			<p>{{ post.perex|raw }}</p>
 
-			<p>
+			<p class="read-more">
 				<a href="{{ route('blog post', post.slug) }}">
-					Read more &gt;
+					Read more →
 				</a>
 			</p>
 		</article>

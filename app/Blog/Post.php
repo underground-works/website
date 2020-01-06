@@ -12,7 +12,7 @@ class Post
 
 	public function __construct(array $metadata, $content)
 	{
-		$this->date    = $metadata['date'] ?? null;
+		$this->date    = now()->parse($metadata['date']) ?? null;
 		$this->slug    = $metadata['slug'] ?? null;
 		$this->title   = $metadata['title'] ?? null;
 		$this->perex   = $metadata['perex'] ?? null;

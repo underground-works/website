@@ -4,12 +4,14 @@
 
 <div class="blog limited-width">
 	<article class="post post-detail">
-		<div class="title">
-			<h1>{{ post.title }}</h1>
-			<small>{{ post.date }}</small>
+		<div class="metadata">
+			<span class="date">{{ post.date.format('l, F jS Y') }}</span>
+			{% include 'partials.blog-authors' %}
 		</div>
 
-		{% include 'partials.blog-authors' %}
+		<div class="title">
+			<h1>{{ post.title }}</h1>
+		</div>
 
 		{{ post.content|raw }}
 	</article>
