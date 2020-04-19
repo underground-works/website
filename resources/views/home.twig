@@ -2,8 +2,12 @@
 
 {% block content %}
 <article class="home-block home-block-clockwork limited-width">
-	<h1>Clockwork</h1>
-	<h2>php dev tools integrated to your browser</h2>
+	<div class="limited-width">
+		<h1>Clockwork</h1>
+		<p>
+			Clockwork is a development tool for PHP available right in your browser. Clockwork gives you an insight into your application runtime - including request data, performance metrics, log entries, database queries, cache queries, redis commands, dispatched events, queued jobs, rendered views and more - for HTTP requests, commands, queue jobs and tests.
+		</p>
+	</div>
 
 	<a href="/clockwork">
 		{# <img src="{{ asset(clockworkScreenshotsPath ~ '/' ~ random([ 1, 2, 3 ]) ~ '.png') }}" alt="Clockwork screenshot"> #}
@@ -11,36 +15,46 @@
 	</a>
 </article>
 
-<article class="home-block home-block-createdBy">
+<article class="home-block home-block-createdBy limited-width">
 	<div class="limited-width">
 		<h1>Created by</h1>
 	</div>
 
-	<div class="authors limited-width">
-		<div class="author wide">
-			<div>
-				<a href="https://github.com/itsgoingd" target="_blank">
-					<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="avatar">
+	<div class="maintainers limited-width">
+		<div class="maintainers-maintainer">
+			<a href="https://github.com/itsgoingd" class="maintainer-avatar" target="_blank">
+				<img src="https://avatars.githubusercontent.com/u/821582?v=3">
+			</a>
+
+			<div class="maintainer-info">
+				<h2>its</h2>
+				<p>
+					I'm an independent software creator from Slovakia. I make open-source software under the underground.works label with the goal of making people's lives better with a good design, programming and support.
+				</p>
+			</div>
+
+			<div class="maintainer-links">
+				<a href="https://twitter.com/itsgoingd" target="_blank" title="Twitter">
+					{{ includeAsset('images/twitter.svg') }}
+				</a>
+
+				<a href="https://github.com/itsgoingd" target="_blank" title="GitHub">
+					{{ includeAsset('images/github.svg') }}
+				</a>
+
+				<a href="https://github.com/sponsors/itsgoingd" target="_blank" title="GitHub sponsors">
+					{{ includeAsset('images/heart.svg') }}
 				</a>
 			</div>
-			<div>
-				Miroslav Rigler<br>
-				<a href="https://twitter.com/itsgoingd">@itsgoingd</a>
-			</div>
 		</div>
-		<div class="author wide with-contributions">
-			<div>
-				with contributions<br>
-				by
-			</div>
-		</div>
+	</div>
+
+	<div class="contributors">
 		{% for contributor in contributors %}
-			<div class="author">
-				<div>
-					<a href="{{ contributor.url }}" target="_blank">
-						<img src="{{ contributor.avatarUrl }}" class="avatar" title="{{ contributor.userName }}">
-					</a>
-				</div>
+			<div class="contributors-contributor">
+				<a href="{{ contributor.url }}" target="_blank" class="contributor-avatar">
+					<img src="{{ contributor.avatarUrl }}" title="{{ contributor.userName }}">
+				</a>
 			</div>
 		{% endfor %}
 	</div>

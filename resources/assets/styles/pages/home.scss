@@ -1,26 +1,27 @@
 .home-block-clockwork {
-	h1 {
-		font-size: 210%;
-		margin-bottom: 0;
+	margin-top: 60px;
 
-		@include breakpoint($tablet-screen) {
-			padding: 0 35px;
-		}
+	h1 {
+		font-size: 250%;
+		font-weight: 700;
+		margin-bottom: 0;
 	}
 
 	h2 {
 		font-size: 120%;
 		margin-bottom: 8px;
 		margin-top: 0;
+	}
 
-		@include breakpoint($tablet-screen) {
-			padding: 0 35px;
-		}
+	p {
+		color: #333;
+		font-size: 105%;
 	}
 
 	img {
-		max-height: 500px;
-		max-width: 100%;
+		// screenshot is 2640px wide with the browser window ~2418px wide
+		margin-left: -5%;
+		max-width: 110%;
 	}
 
 	.more {
@@ -37,47 +38,91 @@
 	margin-top: 100px;
 
 	h1 {
-		font-size: 120%;
-		font-weight: 500;
-		margin-bottom: 20px;
+		font-size: 175%;
+		font-weight: 700;
+		margin-bottom: 25px;
+	}
 
-		@include breakpoint($tablet-screen) {
-			padding: 0 35px;
+	.maintainers {
+		margin-bottom: 35px;
+
+		.maintainers-maintainer {
+			align-items: center;
+			display: flex;
+
+			.maintainer-avatar {
+				border-radius: 50%;
+				height: 48px;
+				margin-right: 15px;
+				overflow: hidden;
+				width: 48px;
+
+				img {
+					height: 100%;
+					object-fit: cover;
+					width: 100%;
+				}
+			}
+
+			.maintainer-info {
+				flex: 1;
+
+				h2 {
+					font-size: 100%;
+					font-weight: 600;
+					line-height: 1.5;
+					margin: 0;
+				}
+
+				p {
+					color: #333;
+					font-size: 90%;
+					margin: 0;
+				}
+			}
+
+			.maintainer-links {
+				a {
+					color: #444;
+					margin-left: 10px;
+
+					svg {
+						stroke-width: 1.5px;
+					}
+
+					&:hover {
+						color: #000;
+						text-decoration: none;
+					}
+				}
+			}
 		}
 	}
 
-	strong {
-		font-weight: 500;
-	}
-
-	.avatar {
-		border-radius: 50%;
-		margin: 0 6px;
-		vertical-align: middle;
-		width: 48px;
-	}
-
-	.author {
-		align-items: center;
-		display: flex;
-		line-height: 1.33;
-		margin-bottom: 15px;
-
-		&.wide {
-			min-width: 180px;
-		}
-
-		&.with-contributions {
-			justify-content: flex-end;
-			padding-right: 6px;
-			text-align: right;
-		}
-	}
-
-	.authors {
+	.contributors {
 		display: flex;
 		flex-wrap: wrap;
-		max-width: 960px;
-		width: 98%;
+		justify-content: space-between;
+		margin-left: -5px;
+		width: calc(100% + 10px);
+
+		.contributors-contributor {
+			align-items: center;
+			display: flex;
+
+			.contributor-avatar {
+				border-radius: 50%;
+				height: 48px;
+				margin: 0 5px 10px;
+				overflow: hidden;
+				width: 48px;
+
+				img {
+					height: 100%;
+					object-fit: cover;
+					width: 100%;
+				}
+			}
+		}
 	}
 }
