@@ -59,4 +59,32 @@
 		{% endfor %}
 	</div>
 </article>
+
+<article class="home-block home-block-sponsoredBy limited-width">
+	<div class="limited-width">
+		<h1>Sponsored by</h1>
+
+		<p class="sponsors-intro">This project is a labour of love, made entirely in my free time. If you find anything I do useful, sponsoring on GitHub might be a great way to show your support.
+	</div>
+
+	<div class="sponsors">
+		{% for sponsor in sponsors %}
+			<div class="sponsors-sponsor">
+				<a href="{{ sponsor.url }}" target="_blank" class="sponsor-avatar">
+					<img src="{{ sponsor.avatarUrl }}" title="{{ sponsor.userName }}">
+				</a>
+			</div>
+		{% endfor %}
+
+		<a href="https://github.com/sponsors/itsgoingd" class="sponsors-link" target="_blank">
+			{{ includeAsset('images/heart.svg') }} Become a sponsor
+		</a>
+
+		<div class="sponsors-filler"></div>
+
+		<span class="sponsors-link">
+			Thank you!
+		</span>
+	</div>
+</article>
 {% endblock %}
