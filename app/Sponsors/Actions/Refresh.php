@@ -21,11 +21,16 @@ class Refresh
 		$query = <<< QUERY
 			query {
 				user(login:"{$username}") {
-					sponsorshipsAsMaintainer(first:100) {
+					sponsorshipsAsMaintainer(orderBy: {field:CREATED_AT, direction:ASC}, first:100) {
 						nodes {
 							createdAt, id, privacyLevel,
-							sponsor {
-								id, login, name, avatarUrl, url
+							sponsorEntity {
+								...on User {
+									id, login, name, avatarUrl, url
+								}
+								...on Organization {
+									id, login, name, avatarUrl, url
+								}
 							},
 							tier {
 								id, name
@@ -42,11 +47,11 @@ class Refresh
 	protected function mapGithubSponsorship($sponsorship)
 	{
 		return [
-			'userName'  => $sponsorship['sponsor']['login'],
-			'fullName'  => $sponsorship['sponsor']['name'],
-			'avatarUrl' => $sponsorship['sponsor']['avatarUrl'],
-			'url'       => $sponsorship['sponsor']['url'],
-			'githubId'  => $sponsorship['sponsor']['id'],
+			'userName'  => $sponsorship['sponsorEntity']['login'],
+			'fullName'  => $sponsorship['sponsorEntity']['name'],
+			'avatarUrl' => $sponsorship['sponsorEntity']['avatarUrl'],
+			'url'       => $sponsorship['sponsorEntity']['url'],
+			'githubId'  => $sponsorship['sponsorEntity']['id'],
 			'tier'      => $sponsorship['tier']['name'],
 			'since'     => $sponsorship['createdAt']
 		];
