@@ -20,6 +20,38 @@
 	</a>
 </article>
 
+<article class="home-block home-block-chat">
+	<div class="chat-content">
+		<div class="chat-headline">
+			<div class="chat-logo">
+				{{ includeAsset('images/discord-black.svg') }}
+			</div>
+
+			<h1>underground.<del>chat</del></h1>
+		</div>
+
+		<p class="chat-info">
+			Join us on <strong>Discord</strong> and let's figure out how to make cool stuff together.
+		</p>
+
+		<a href="https://discord.gg/NUuCGE4" class="chat-link" target="_blank">
+			Join
+		</a>
+	</div>
+
+	<div class="chat-chatheads">
+		{% for chathead in chatheads %}
+			<div class="chat-chathead chathead-{{ chathead.size }}" style="{{ chathead.style }}" title="{{ chathead.member.userName }}" data-parallax="{{ chathead.parallax }}">
+				{% if chathead.member.avatarUrl %}
+					<img src="{{ chathead.member.avatarUrl }}">
+				{% else %}
+					{{ includeAsset('images/discord-simple.svg') }}
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</article>
+
 <article class="home-block home-block-createdBy limited-width">
 	<div class="limited-width">
 		<h1>Created by</h1>

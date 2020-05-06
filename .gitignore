@@ -6,5 +6,7 @@
 Homestead.yaml
 Homestead.json
 .env
+/storage/chat-members.json
 /storage/contributors.json
 /storage/sponsors.json
+

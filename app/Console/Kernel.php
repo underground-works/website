@@ -11,6 +11,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        Commands\RefreshChatMembers::class,
         Commands\RefreshContributors::class,
         Commands\RefreshSponsors::class
     ];
@@ -23,6 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->weekly('chat:members:refresh');
         $schedule->weekly('contributors:refresh');
         $schedule->weekly('sponsors:refresh');
     }

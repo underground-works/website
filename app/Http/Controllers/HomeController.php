@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Chat\{ Chatheads, Members };
 use App\Contributors\Contributors;
 use App\Sponsors\Sponsors;
 
@@ -11,9 +12,10 @@ class HomeController extends Controller
     {
         $clockworkScreenshotsPath = (new Agent)->isFirefox() ? 'images/clockwork/firefox' : 'images/clockwork/chrome';
 
+        $chatheads = Chatheads::make(app(Members::class)->all())->generate();
         $contributors = app(Contributors::class)->all();
         $sponsors = app(Sponsors::class)->all();
 
-        return view('home', compact('clockworkScreenshotsPath', 'contributors', 'sponsors'));
+        return view('home', compact('clockworkScreenshotsPath', 'chatheads', 'contributors', 'sponsors'));
     }
 }
