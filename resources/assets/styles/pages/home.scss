@@ -149,7 +149,7 @@
 			.maintainer-avatar {
 				border-radius: 50%;
 				height: 64px;
-				margin-right: 25px;
+				margin: 0 25px;
 				overflow: hidden;
 				width: 64px;
 
@@ -195,6 +195,11 @@
 				}
 			}
 		}
+	}
+
+	.contributors-intro {
+		font-size: 90%;
+		margin-bottom: 35px;
 	}
 
 	.contributors {
