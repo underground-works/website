@@ -5,16 +5,17 @@
     "type": "project",
     "require": {
         "php": ">=7.4.0",
-        "laravel/framework": "^7.0",
+        "laravel/framework": "^8.0",
         "itsgoingd/clockwork": "^5.0",
-        "rcrowe/twigbridge": "^0.11",
+        "rcrowe/twigbridge": "^0.12",
         "erusev/parsedown": "^1.6",
         "symfony/yaml": "^5.0",
         "jenssegers/agent": "^2.5",
         "fideloper/proxy": "^4.2",
-        "graham-campbell/github": "^8.4",
+        "graham-campbell/github": "^10.0",
         "php-http/guzzle6-adapter": "^2.0",
-        "restcord/restcord": "^0.5.0"
+        "restcord/restcord": "^0.5.0",
+        "http-interop/http-factory-guzzle": "*"
     },
     "autoload": {
         "psr-4": {
@@ -38,7 +39,10 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "require-dev": {
         "deployer/deployer": "^6.7",
