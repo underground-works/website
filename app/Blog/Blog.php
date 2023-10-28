@@ -26,6 +26,11 @@ class Blog
 		return $this->all(true);
 	}
 
+	public function latest()
+	{
+		return $this->all()->first();
+	}
+
 	public function post($slug)
 	{
 		return $this->allIncludingDrafts()->where('slug', $slug)->first();

@@ -68,6 +68,6 @@ class PostParser
 				'twitter'  => $matches['twitter'] ?? null,
 				'imageUrl' => 'https://avatars.githubusercontent.com/u/821582?v=3'
 			];
-		})->all();
+		});
 	}
 }

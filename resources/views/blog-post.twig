@@ -1,20 +1,21 @@
 {% extends 'layout' %}
 
 {% block content %}
+<header class="h-32"></header>
 
-<div class="blog limited-width">
-	<article class="post post-detail limited-width">
-		<div class="metadata">
-			<span class="date">{{ post.date.format('l, F jS Y') }}</span>
-			{% include 'partials.blog-authors' %}
+<article class="py-12 flex max-w-5xl w-full mx-auto">
+	<div class="w-48">
+	</div>
+	<div class="flex-1 space-y-3">
+		<h1 class="leading-tight text-2xl font-bold">{{post.title}}</h1>
+
+		<p class="text-zinc-400 text-sm">Published at {{ post.date.format('l, F jS Y') }} by {{ post.authors.pluck('name').join(', ') }}</p>
+		
+		<div class="prose prose-zinc max-w-none pt-6">
+			{{ post.content|raw }}
 		</div>
-
-		<div class="title">
-			<h1>{{ post.title }}</h1>
-		</div>
-
-		{{ post.content|raw }}
-	</article>
-</div>
-
+	</div>
+	<div class="w-48">
+	</div>
+</article>
 {% endblock %}

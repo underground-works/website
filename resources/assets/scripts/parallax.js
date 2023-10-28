@@ -5,7 +5,7 @@ class Parallax
 	}
 
 	bind() {
-		this.update()
+		document.addEventListener('DOMContentLoaded', () => this.update())
 
 		return this
 	}

@@ -13,7 +13,10 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\RefreshChatMembers::class,
         Commands\RefreshContributors::class,
-        Commands\RefreshSponsors::class
+        Commands\RefreshSponsors::class,
+
+        Commands\Newsletter\ListSubscribers::class,
+        Commands\Newsletter\Unsubscribe::class
     ];
 
     /**

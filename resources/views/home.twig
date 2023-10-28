@@ -1,129 +1,189 @@
 {% extends 'layout' %}
 
 {% block content %}
-<article class="home-block home-block-clockwork limited-width">
-	<div class="limited-width">
-		<h1>
-			<a href="/clockwork">
-				Clockwork
-			</a>
-		</h1>
+<header class="min-h-[100vh] flex items-center justify-center">
+	<div class="max-w-lg leading-loose text-justify text-lg italic space-y-5">
+		<p>
+			underground.works is a little label, a little place, where we can work on our little projects for fun.
+		</p>
 
 		<p>
-			Clockwork is a development tool for PHP available right in your browser. Clockwork gives you an insight into your application runtime - including request data, performance metrics, log entries, database queries, cache queries, redis commands, dispatched events, queued jobs, rendered views and more - for HTTP requests, commands, queue jobs and tests.
+			underground.works is making things because we want to make them, because we love to do create, because we have to create.
+		</p>
+
+		<p>
+			underground.works is not making things to make money, or to gain fame, for twitter followers, or github stars.
+		</p>
+
+		<p>
+			underground.works is more the kid typing a thousand lines from the manual into an Atari computer to draw a rainbow on the screen; than a talk hyping up a new framework release at an expensive developer conference.
 		</p>
 	</div>
+</header>
 
-	<a href="/clockwork">
-		{# <img src="{{ asset(clockworkScreenshotsPath ~ '/' ~ random([ 1, 2, 3 ]) ~ '.png') }}" alt="Clockwork screenshot"> #}
-		<img src="{{ asset('images/clockwork/clockwork.png') }}" alt="Clockwork screenshot">
-	</a>
-</article>
-
-<article class="home-block home-block-chat">
-	<div class="chat-content">
-		<div class="chat-headline">
-			<div class="chat-logo">
+<article class="py-20 my-20 relative text-center -mt-6">
+	<div class="max-w-lg mx-auto">
+		<div class="flex items-center justify-center">
+			<div class="w-10 mr-2 pt-2">
 				{{ includeAsset('images/discord-black.svg') }}
 			</div>
 
-			<h1>underground.<del>chat</del></h1>
+			<h1 class="text-2xl font-bold">underground.<del>chat</del></h1>
 		</div>
 
-		<p class="chat-info">
-			Join us on <strong>Discord</strong> and let's figure out how to make cool stuff together.
+		<p class="my-4 px-4">
+			Join us on <strong>Discord</strong> to talk about open-source, southern hip-hop and weird japanese movies.
 		</p>
 
-		<a href="https://discord.gg/NUuCGE4" class="chat-link" target="_blank">
+		<a href="https://discord.gg/NUuCGE4" class="inline-block bg-zinc-100 hover:bg-zinc-200 transition duration-300 rounded-full border border-zinc-200 text-zinc-600 mt-2.5 py-1.5 px-12" target="_blank">
 			Join
 		</a>
 	</div>
 
-	<div class="chat-chatheads">
+	<div>
 		{% for chathead in chatheads %}
-			<div class="chat-chathead chathead-{{ chathead.size }}" style="{{ chathead.style }}" title="{{ chathead.member.userName }}" data-parallax="{{ chathead.parallax }}">
-				{% if chathead.member.avatarUrl %}
-					<img src="{{ chathead.member.avatarUrl }}">
-				{% else %}
-					{{ includeAsset('images/discord-simple.svg') }}
-				{% endif %}
-			</div>
+		<div class="flex items-center justify-center bg-zinc-400 absolute rounded-full overflow-hidden {{ chathead.size == 'large' ? 'w-20 h-20' }} {{ chathead.size == 'medium' ? 'w-16 h-16' }} {{ chathead.size == 'small' ? 'w-12 h-12' }}" style="translate3d(0,0,0); {{ chathead.style }}" title="{{ chathead.member.userName }}" data-parallax="{{ chathead.parallax }}">
+			{% if chathead.member.avatarUrl %}
+			<img src="{{ chathead.member.avatarUrl }}" class="w-full h-full max-w-full">
+			{% else %}
+			<div class="w-[75%] h-[75%]">{{ includeAsset('images/discord-simple.svg') }}</div>
+			{% endif %}
+		</div>
 		{% endfor %}
 	</div>
 </article>
 
-<article class="home-block home-block-createdBy limited-width">
-	<div class="limited-width">
-		<h1>Created by</h1>
+<article class="py-16 flex max-w-5xl w-full mx-auto">
+	<div class="w-48">
+		<a href="/blog" class="underline">blog</a>
 	</div>
+	<div class="flex-1 space-y-3">
+		<h1 class="leading-tight text-2xl font-bold">
+			<a href="{{ route('blog post', latestBlog.slug) }}">
+				{{latestBlog.title}}
+			</a>
+		</h1>
+		<p>
+			<a href="{{ route('blog post', latestBlog.slug) }}">
+				{{latestBlog.perex|raw}}
+			</a>
+		</p>
+		<p class="text-zinc-400 text-sm">
+			<a href="{{ route('blog post', latestBlog.slug) }}">
+				Published at {{ latestBlog.date.format('l, F jS Y') }} by {{ latestBlog.authors.pluck('name').join(', ') }}
+			</a>
+		</p>
+	</div>
+	<div class="w-48">
+	</div>
+</article>
 
-	<div class="maintainers limited-width">
-		<div class="maintainers-maintainer">
-			<a href="https://github.com/itsgoingd" class="maintainer-avatar" target="_blank">
-				<img src="https://avatars.githubusercontent.com/u/821582?v=3">
+<article class="py-16 flex max-w-5xl w-full mx-auto">
+	<div class="w-48">
+		projects
+	</div>
+	<div class="flex-1 space-y-3">
+		<h1 class="leading-tight text-2xl font-bold">
+			<a href="/clockwork">
+				Clockwork
+			</a>
+		</h1>
+		<p>
+			<a href="/clockwork">
+				Clockwork is a development tool for PHP available right in your browser. Clockwork gives you an insight into your application runtime - including request data, performance metrics, log entries, database queries, cache queries, redis commands, dispatched events, queued jobs, rendered views and more - for HTTP requests, commands, queue jobs and tests.
+			</a>
+		</p>
+		<a href="/clockwork">
+			<img src="{{ asset('images/clockwork/clockwork.png') }}" alt="Clockwork screenshot">
+		</a>
+	</div>
+	<div class="w-48">
+	</div>
+</article>
+
+<article class="py-16 flex max-w-5xl w-full mx-auto">
+	<div class="w-48">
+		team
+	</div>
+	<div class="flex-1">
+		<div class="flex gap-x-5">
+			<a href="https://its.wtf" target="_blank" class="w-24 shrink-0">
+				<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="w-24">
 			</a>
 
-			<div class="maintainer-info">
-				<h2>its</h2>
-				<p>
-					I'm an independent software creator from Slovakia. I make open-source software under the underground.works label with the goal of making people's lives better with a good design, programming and support.
+			<div>
+				<h2 class="text-lg font-bold leading-none">
+					<a href="https://its.wtf" target="_blank">
+						its
+					</a>
+				</h2>
+				<p class="mt-2">
+					<a href="https://its.wtf" target="_blank">
+						I'm an independent software creator from Slovakia. I use programming as my creative outlet. I also enjoy travelling, photography, live-streaming, role-playing games, philosophy, etc.
+					</a>
 				</p>
 			</div>
+		</div>
 
-			<div class="maintainer-links">
-				<a href="https://twitter.com/itsgoingd" target="_blank" title="Twitter">
-					{{ includeAsset('images/twitter.svg') }}
-				</a>
-
-				<a href="https://github.com/itsgoingd" target="_blank" title="GitHub">
-					{{ includeAsset('images/github.svg') }}
-				</a>
-
-				<a href="https://github.com/sponsors/itsgoingd" target="_blank" title="GitHub sponsors">
-					{{ includeAsset('images/heart.svg') }}
-				</a>
-			</div>
+		<div class="mt-10">
+			This project is also made by all the people sharing code, ideas, feedback and engaging in the community. Thank you.
 		</div>
 	</div>
-
-	<div class="limited-width">
-		<p class="contributors-intro">This project would not be possible without these amazing people, sharing code, ideas, feedback and engaging in the community. Thank you.</p>
-	</div>
-
-	<div class="contributors">
-		{% for contributor in contributors %}
-			<div class="contributors-contributor">
-				<a href="{{ contributor.url }}" target="_blank" class="contributor-avatar">
-					<img src="{{ contributor.avatarUrl }}" title="{{ contributor.userName }}">
-				</a>
-			</div>
-		{% endfor %}
-
-		<div class="contributors-filler"></div>
+	<div class="w-48">
 	</div>
 </article>
 
-<article class="home-block home-block-sponsoredBy limited-width">
-	<div class="limited-width">
-		<h1>Sponsored by</h1>
-
-		<p class="sponsors-intro">This project is a labour of love, made entirely in my free time. If you find anything I do useful, sponsoring on GitHub might be a great way to show your support. Thank you.</p>
-	</div>
-
-	<div class="sponsors">
-		{% for sponsor in sponsors %}
-			<div class="sponsors-sponsor">
-				<a href="{{ sponsor.url }}" target="_blank" class="sponsor-avatar">
-					<img src="{{ sponsor.avatarUrl }}" title="{{ sponsor.userName }}">
-				</a>
-			</div>
-		{% endfor %}
-
-		<div class="sponsors-filler"></div>
-
-		<a href="https://github.com/sponsors/itsgoingd" class="sponsors-link" target="_blank">
-			{{ includeAsset('images/heart.svg') }} Become a sponsor
+<div class="flex flex-wrap pb-16">
+	{% for contributor in contributors %}
+	<div class="w-16 h-16" data-fit-screen="64">
+		<a href="{{ contributor.url }}" target="_blank" class="w-full h-full">
+			<img src="{{ contributor.avatarUrl }}" title="{{ contributor.userName }}" class="max-w-full">
 		</a>
+	</div>
+	{% endfor %}
+</div>
+
+<article class="py-16 flex max-w-5xl w-full mx-auto">
+	<div class="w-48">
+		<a href="https://github.com/sponsors/itsgoingd" target="_blank" class="underline">sponsorship</a>
+	</div>
+	<div class="flex-1">
+		This project is a labour of love, made entirely in my free time. I will continue doing it for free, forever. If you find anything I do useful, you can <a href="https://github.com/sponsors/itsgoingd" target="_blank" class="underline text-[#ea4aaa]">sponsor me</a> on GitHub. Only if you really want to. Thank you.
+	</div>
+	<div class="w-48">
+	</div>
+</article>
+
+<div class="flex flex-wrap pb-16">
+	{% for sponsor in sponsors %}
+	<div class="w-16 h-16" data-fit-screen="64">
+		<a href="{{ sponsor.url }}" target="_blank" class="w-full h-full">
+			<img src="{{ sponsor.avatarUrl }}" title="{{ sponsor.userName }}" class="max-w-full">
+		</a>
+	</div>
+	{% endfor %}
+</div>
+
+<article class="py-16 flex max-w-5xl w-full mx-auto">
+	<div class="w-48">
+	</div>
+	<div class="flex-1 flex flex-col items-center">
+		<div class="flex items-center justify-center">
+			<div class="w-8 mr-2 pt-1">
+				{{ includeAsset('images/mail.svg') }}
+			</div>
+
+			<h1 class="text-2xl font-bold">underground.<del>news</del></h1>
+		</div>
+		<div class="text-center mt-4 mb-6 space-y-5">
+			We don't do social media. Sign up for short email updates on what we are up to every once in a while. Plain-text emails, no tracking, no ads, unsubscribe at any point.
+		</div>
+		<form class="relative" data-newsletter>
+			<input type="email" required placeholder="Your e-mail address" class="w-96 h-12 rounded-full border border-zinc-300 text-sm px-8 pr-40" data-newsletter-input>
+			<button type="submit" class="inline-block bg-zinc-100 hover:bg-zinc-200 transition duration-300 rounded-full border border-zinc-200 text-zinc-600 h-10 px-8 absolute top-1 right-1" data-newsletter-submit>Subscribe</button>
+		</form>
+	</div>
+	<div class="w-48">
 	</div>
 </article>
 {% endblock %}

@@ -1,28 +1,31 @@
 {% extends 'layout' %}
 
 {% block content %}
+<header class="h-32"></header>
 
-<div class="blog limited-width">
-	{% for post in posts %}
-		<article class="post limited-width">
-			<div class="metadata">
-				<span class="date">{{ post.date.format('l, F jS Y') }}</span>
-				{% include 'partials.blog-authors' %}
-			</div>
-
-			<a href="{{ route('blog post', post.slug) }}" class="title">
-				<h1>{{ post.title }}</h1>
-			</a>
-
-			<div class="perex">{{ post.perex|raw }}</div>
-
-			<p class="read-more">
+{% for post in posts %}
+	<article class="py-12 flex max-w-5xl w-full mx-auto">
+		<div class="w-48">
+		</div>
+		<div class="flex-1 space-y-3">
+			<h1 class="leading-tight text-2xl font-bold">
 				<a href="{{ route('blog post', post.slug) }}">
-					Read more →
+					{{post.title}}
+				</a>
+			</h1>
+			<p>
+				<a href="{{ route('blog post', post.slug) }}">
+					{{post.perex|raw}}
 				</a>
 			</p>
-		</article>
-	{% endfor %}
-</div>
-
+			<p class="text-zinc-400 text-sm">
+				<a href="{{ route('blog post', post.slug) }}">
+					Published at {{ post.date.format('l, F jS Y') }} by {{ post.authors.pluck('name').join(', ') }}
+				</a>
+			</p>
+		</div>
+		<div class="w-48">
+		</div>
+	</article>
+{% endfor %}
 {% endblock %}
