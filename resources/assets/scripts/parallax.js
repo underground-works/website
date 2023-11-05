@@ -17,6 +17,8 @@ class Parallax
 	}
 
 	add(el, movement) {
+		if (! el.offsetParent?.offsetTop) return
+		
 		this.elements.push({ el, movement, offset: el.offsetTop, parentOffset: el.offsetParent.offsetTop })
 	}
 

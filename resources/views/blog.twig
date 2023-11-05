@@ -1,13 +1,13 @@
 {% extends 'layout' %}
 
 {% block content %}
-<header class="h-32"></header>
+<header class="h-16 sm:h-32"></header>
 
 {% for post in posts %}
-	<article class="py-12 flex max-w-5xl w-full mx-auto">
-		<div class="w-48">
+	<article class="py-12 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
+		<div class="sm:w-48 mb-6 sm:mb-0">
 		</div>
-		<div class="flex-1 space-y-3">
+		<div class="sm:flex-1 space-y-3">
 			<h1 class="leading-tight text-2xl font-bold">
 				<a href="{{ route('blog post', post.slug) }}">
 					{{post.title}}
@@ -24,7 +24,7 @@
 				</a>
 			</p>
 		</div>
-		<div class="w-48">
+		<div class="hidden sm:block w-48">
 		</div>
 	</article>
 {% endfor %}

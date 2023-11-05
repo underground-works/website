@@ -11,7 +11,7 @@ class FitScreen
     }
 
     declarative() {
-        document.querySelectorAll('[data-fit-screen]').forEach(el => this.add(el, parseInt(el.dataset.fitScreen)))
+        document.querySelectorAll('[data-fit-screen]').forEach(el => this.add(el, el.clientWidth))
         
         return this
     }

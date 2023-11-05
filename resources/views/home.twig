@@ -2,7 +2,7 @@
 
 {% block content %}
 <header class="min-h-[100vh] flex items-center justify-center">
-	<div class="max-w-lg leading-loose text-justify text-lg italic space-y-5">
+	<div class="max-w-lg sm:leading-loose text-justify sm:text-lg italic space-y-5 px-8 sm:px-0">
 		<p>
 			underground.works is a little label, a little place, where we can work on our little projects for fun.
 		</p>
@@ -21,7 +21,7 @@
 	</div>
 </header>
 
-<article class="py-20 my-20 relative text-center -mt-6">
+<article class="py-16 sm:py-20 sm:my-20 relative text-center -mt-6">
 	<div class="max-w-lg mx-auto">
 		<div class="flex items-center justify-center">
 			<div class="w-10 mr-2 pt-2">
@@ -40,7 +40,7 @@
 		</a>
 	</div>
 
-	<div>
+	<div class="hidden sm:block">
 		{% for chathead in chatheads %}
 		<div class="flex items-center justify-center bg-zinc-400 absolute rounded-full overflow-hidden {{ chathead.size == 'large' ? 'w-20 h-20' }} {{ chathead.size == 'medium' ? 'w-16 h-16' }} {{ chathead.size == 'small' ? 'w-12 h-12' }}" style="translate3d(0,0,0); {{ chathead.style }}" title="{{ chathead.member.userName }}" data-parallax="{{ chathead.parallax }}">
 			{% if chathead.member.avatarUrl %}
@@ -53,11 +53,11 @@
 	</div>
 </article>
 
-<article class="py-16 flex max-w-5xl w-full mx-auto">
-	<div class="w-48">
+<article class="py-16 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
+	<div class="sm:w-48 mb-6 sm:mb-0">
 		<a href="/blog" class="underline">blog</a>
 	</div>
-	<div class="flex-1 space-y-3">
+	<div class="sm:flex-1 space-y-3">
 		<h1 class="leading-tight text-2xl font-bold">
 			<a href="{{ route('blog post', latestBlog.slug) }}">
 				{{latestBlog.title}}
@@ -74,15 +74,15 @@
 			</a>
 		</p>
 	</div>
-	<div class="w-48">
+	<div class="hidden sm:block w-48">
 	</div>
 </article>
 
-<article class="py-16 flex max-w-5xl w-full mx-auto">
-	<div class="w-48">
+<article class="py-16 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
+	<div class="sm:w-48 mb-6 sm:mb-0">
 		projects
 	</div>
-	<div class="flex-1 space-y-3">
+	<div class="sm:flex-1 space-y-3">
 		<h1 class="leading-tight text-2xl font-bold">
 			<a href="/clockwork">
 				Clockwork
@@ -93,21 +93,21 @@
 				Clockwork is a development tool for PHP available right in your browser. Clockwork gives you an insight into your application runtime - including request data, performance metrics, log entries, database queries, cache queries, redis commands, dispatched events, queued jobs, rendered views and more - for HTTP requests, commands, queue jobs and tests.
 			</a>
 		</p>
-		<a href="/clockwork">
+		<a href="/clockwork" class="block">
 			<img src="{{ asset('images/clockwork/clockwork.png') }}" alt="Clockwork screenshot">
 		</a>
 	</div>
-	<div class="w-48">
+	<div class="hidden sm:block w-48">
 	</div>
 </article>
 
-<article class="py-16 flex max-w-5xl w-full mx-auto">
-	<div class="w-48">
+<article class="py-16 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
+	<div class="sm:w-48 mb-6 sm:mb-0">
 		team
 	</div>
-	<div class="flex-1">
+	<div class="sm:flex-1">
 		<div class="flex gap-x-5">
-			<a href="https://its.wtf" target="_blank" class="w-24 shrink-0">
+			<a href="https://its.wtf" target="_blank" class="w-16 sm:w-24 shrink-0">
 				<img src="https://avatars.githubusercontent.com/u/821582?v=3" class="w-24">
 			</a>
 
@@ -129,13 +129,13 @@
 			This project is also made by all the people sharing code, ideas, feedback and engaging in the community. Thank you.
 		</div>
 	</div>
-	<div class="w-48">
+	<div class="hidden sm:block w-48">
 	</div>
 </article>
 
 <div class="flex flex-wrap pb-16">
 	{% for contributor in contributors %}
-	<div class="w-16 h-16" data-fit-screen="64">
+	<div class="w-12 sm:w-16 h-12 sm:h-16" data-fit-screen>
 		<a href="{{ contributor.url }}" target="_blank" class="w-full h-full">
 			<img src="{{ contributor.avatarUrl }}" title="{{ contributor.userName }}" class="max-w-full">
 		</a>
@@ -143,20 +143,20 @@
 	{% endfor %}
 </div>
 
-<article class="py-16 flex max-w-5xl w-full mx-auto">
-	<div class="w-48">
+<article class="py-16 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
+	<div class="sm:w-48 mb-6 sm:mb-0">
 		<a href="https://github.com/sponsors/itsgoingd" target="_blank" class="underline">sponsorship</a>
 	</div>
-	<div class="flex-1">
+	<div class="sm:flex-1 space-y-3">
 		This project is a labour of love, made entirely in my free time. I will continue doing it for free, forever. If you find anything I do useful, you can <a href="https://github.com/sponsors/itsgoingd" target="_blank" class="underline text-[#ea4aaa]">sponsor me</a> on GitHub. Only if you really want to. Thank you.
 	</div>
-	<div class="w-48">
+	<div class="hidden sm:block w-48">
 	</div>
 </article>
 
 <div class="flex flex-wrap pb-16">
 	{% for sponsor in sponsors %}
-	<div class="w-16 h-16" data-fit-screen="64">
+	<div class="w-12 sm:w-16 h-12 sm:h-16" data-fit-screen>
 		<a href="{{ sponsor.url }}" target="_blank" class="w-full h-full">
 			<img src="{{ sponsor.avatarUrl }}" title="{{ sponsor.userName }}" class="max-w-full">
 		</a>
@@ -164,10 +164,8 @@
 	{% endfor %}
 </div>
 
-<article class="py-16 flex max-w-5xl w-full mx-auto">
-	<div class="w-48">
-	</div>
-	<div class="flex-1 flex flex-col items-center">
+<article class="py-16">
+	<div class="max-w-2xl mx-auto flex flex-col items-center">
 		<div class="flex items-center justify-center">
 			<div class="w-8 mr-2 pt-1">
 				{{ includeAsset('images/mail.svg') }}
@@ -175,15 +173,13 @@
 
 			<h1 class="text-2xl font-bold">underground.<del>news</del></h1>
 		</div>
-		<div class="text-center mt-4 mb-6 space-y-5">
+		<div class="text-center mt-4 mb-6 px-4 space-y-5">
 			We don't do social media. Sign up for short email updates on what we are up to every once in a while. Plain-text emails, no tracking, no ads, unsubscribe at any point.
 		</div>
 		<form class="relative" data-newsletter>
-			<input type="email" required placeholder="Your e-mail address" class="w-96 h-12 rounded-full border border-zinc-300 text-sm px-8 pr-40" data-newsletter-input>
+			<input type="email" required placeholder="Your e-mail address" class="w-80 sm:w-96 h-12 rounded-full border border-zinc-300 text-sm px-4 sm:px-8 pr-40" data-newsletter-input>
 			<button type="submit" class="inline-block bg-zinc-100 hover:bg-zinc-200 transition duration-300 rounded-full border border-zinc-200 text-zinc-600 h-10 px-8 absolute top-1 right-1" data-newsletter-submit>Subscribe</button>
 		</form>
-	</div>
-	<div class="w-48">
 	</div>
 </article>
 {% endblock %}
