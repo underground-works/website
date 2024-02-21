@@ -2,56 +2,12 @@
 
 {% block content %}
 <header class="min-h-[100vh] flex items-center justify-center">
-	<div class="max-w-lg sm:leading-loose text-justify sm:text-lg italic space-y-5 px-8 sm:px-0">
+	<div class="max-w-lg text-lg text-gray-700 text-center space-y-6 px-8 sm:px-0">
 		<p>
-			underground.works is a little label, a little place, where we can work on our little projects for fun.
-		</p>
-
-		<p>
-			underground.works is making things because we want to make them, because we love to do create, because we have to create.
-		</p>
-
-		<p>
-			underground.works is not making things to make money, or to gain fame, for twitter followers, or github stars.
-		</p>
-
-		<p>
-			underground.works is more the kid typing a thousand lines from the manual into an Atari computer to draw a rainbow on the screen; than a talk hyping up a new framework release at an expensive developer conference.
+			<span class="font-bold text-gray-950">underground.<del>works</del></span> is a little place, where we can work on our open-source projects - to bring joy or to make someone's life just a little bit easier - and most importantly to have fun.
 		</p>
 	</div>
 </header>
-
-<article class="py-16 sm:py-20 sm:my-20 relative text-center -mt-6">
-	<div class="max-w-lg mx-auto">
-		<div class="flex items-center justify-center">
-			<div class="w-10 mr-2 pt-2">
-				{{ includeAsset('images/discord-black.svg') }}
-			</div>
-
-			<h1 class="text-2xl font-bold">underground.<del>chat</del></h1>
-		</div>
-
-		<p class="my-4 px-4">
-			Join us on <strong>Discord</strong> to talk about open-source, southern hip-hop and weird japanese movies.
-		</p>
-
-		<a href="https://discord.gg/NUuCGE4" class="inline-block bg-zinc-100 hover:bg-zinc-200 transition duration-300 rounded-full border border-zinc-200 text-zinc-600 mt-2.5 py-1.5 px-12" target="_blank">
-			Join
-		</a>
-	</div>
-
-	<div class="hidden sm:block">
-		{% for chathead in chatheads %}
-		<div class="flex items-center justify-center bg-zinc-400 absolute rounded-full overflow-hidden {{ chathead.size == 'large' ? 'w-20 h-20' }} {{ chathead.size == 'medium' ? 'w-16 h-16' }} {{ chathead.size == 'small' ? 'w-12 h-12' }}" style="translate3d(0,0,0); {{ chathead.style }}" title="{{ chathead.member.userName }}" data-parallax="{{ chathead.parallax }}">
-			{% if chathead.member.avatarUrl %}
-			<img src="{{ chathead.member.avatarUrl }}" class="w-full h-full max-w-full">
-			{% else %}
-			<div class="w-[75%] h-[75%]">{{ includeAsset('images/discord-simple.svg') }}</div>
-			{% endif %}
-		</div>
-		{% endfor %}
-	</div>
-</article>
 
 <article class="py-16 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
 	<div class="sm:w-48 mb-6 sm:mb-0">
@@ -78,26 +34,60 @@
 	</div>
 </article>
 
-<article class="py-16 sm:flex max-w-5xl w-full mx-auto px-8 sm:px-0">
-	<div class="sm:w-48 mb-6 sm:mb-0">
-		projects
-	</div>
-	<div class="sm:flex-1 space-y-3">
-		<h1 class="leading-tight text-2xl font-bold">
-			<a href="/clockwork">
-				Clockwork
-			</a>
-		</h1>
-		<p>
-			<a href="/clockwork">
-				Clockwork is a development tool for PHP available right in your browser. Clockwork gives you an insight into your application runtime - including request data, performance metrics, log entries, database queries, cache queries, redis commands, dispatched events, queued jobs, rendered views and more - for HTTP requests, commands, queue jobs and tests.
-			</a>
+<article class="py-16 max-w-5xl w-full mx-auto px-8 sm:px-0">
+	<section class="sm:flex">
+		<div class="sm:w-48 mb-6 sm:mb-0">
+			projects
+		</div>
+		<div class="sm:flex-1 space-y-3">
+			<h1 class="leading-tight text-2xl font-bold">
+				<a href="/clockwork">
+					Clockwork
+				</a>
+			</h1>
+			<p>
+				<a href="/clockwork">
+					Clockwork is a development tool for PHP available right in your browser. Clockwork gives you an insight into your application runtime - including request data, performance metrics, log entries, database queries, cache queries, redis commands, dispatched events, queued jobs, rendered views and more - for HTTP requests, commands, queue jobs and tests.
+				</a>
+			</p>
+		</div>
+		<div class="hidden sm:block w-48">
+		</div>
+	</section>
+	<a href="/clockwork" class="block mt-8">
+		<img src="{{ asset('images/clockwork/clockwork.png') }}" alt="Clockwork screenshot">
+	</a>
+</article>
+
+<article class="py-16 sm:py-16 sm:my-16 relative text-center">
+	<div class="max-w-lg mx-auto">
+		<div class="flex items-center justify-center">
+			<div class="w-10 mr-2 pt-2">
+				{{ includeAsset('images/discord-black.svg') }}
+			</div>
+
+			<h1 class="text-2xl font-bold">underground.<del>chat</del></h1>
+		</div>
+
+		<p class="my-4 px-4">
+			Join us on <strong>Discord</strong> to collaborate, get help, or just to talk about stuff.
 		</p>
-		<a href="/clockwork" class="block">
-			<img src="{{ asset('images/clockwork/clockwork.png') }}" alt="Clockwork screenshot">
+
+		<a href="https://discord.gg/NUuCGE4" class="inline-block bg-zinc-100 hover:bg-zinc-200 transition duration-300 rounded-full border border-zinc-200 text-zinc-600 mt-2.5 py-1.5 px-12" target="_blank">
+			Join
 		</a>
 	</div>
-	<div class="hidden sm:block w-48">
+
+	<div class="hidden sm:block">
+		{% for chathead in chatheads %}
+		<div class="flex items-center justify-center bg-zinc-400 absolute rounded-full overflow-hidden {{ chathead.size == 'large' ? 'w-20 h-20' }} {{ chathead.size == 'medium' ? 'w-16 h-16' }} {{ chathead.size == 'small' ? 'w-12 h-12' }}" style="translate3d(0,0,0); {{ chathead.style }}" title="{{ chathead.member.userName }}" data-parallax="{{ chathead.parallax }}">
+			{% if chathead.member.avatarUrl %}
+			<img src="{{ chathead.member.avatarUrl }}" class="w-full h-full max-w-full">
+			{% else %}
+			<div class="w-[75%] h-[75%]">{{ includeAsset('images/discord-simple.svg') }}</div>
+			{% endif %}
+		</div>
+		{% endfor %}
 	</div>
 </article>
 
@@ -164,7 +154,7 @@
 	{% endfor %}
 </div>
 
-<article class="py-16">
+<article class="py-16" id="newsletter">
 	<div class="max-w-2xl mx-auto flex flex-col items-center">
 		<div class="flex items-center justify-center">
 			<div class="w-8 mr-2 pt-1">
