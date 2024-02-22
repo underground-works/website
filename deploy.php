@@ -1,9 +1,7 @@
 <?php namespace Deployer;
 
-require __DIR__ . '/vendor/autoload.php';
-
-require 'recipe/composer.php';
-require 'recipe/npm.php';
+require 'recipe/laravel.php';
+require 'contrib/npm.php';
 
 // Project name
 set('application', 'underground.works');
@@ -12,14 +10,8 @@ set('application', 'underground.works');
 set('repository', 'https://github.com/underground-works/website.git');
 
 // Shared files/dirs between deploys
-add('shared_files', [
-	'.env',
-	'public/clockwork'
-]);
-
-add('shared_dirs', [
-	'storage'
-]);
+add('shared_files', [ 'public/clockwork' ]);
+set('writable_dirs', []);
 
 set('default_stage', 'production');
 
@@ -32,37 +24,32 @@ set('user', function () {
 // Hosts
 
 host('arizona')
-	->stage('production')
-	->user('its')
+	->set('labels', [ 'stage' => 'development' ])
+	->set('user', 'its')
 	->set('deploy_path', '/Sites/its/underground.works');
 
 // Tasks
-
-desc('Execute artisan config:cache');
-task('artisan:config:cache', function () {
-	run('{{bin/php}} {{release_path}}/artisan config:cache');
-});
-
-desc('Execute artisan route:cache');
-task('artisan:route:cache', function () {
-	run('{{bin/php}} {{release_path}}/artisan route:cache');
-});
 
 desc('Execute npm run production');
 task('npm:run:production', function () {
 	run('cd {{release_path}} && {{bin/npm}} run production');
 });
 
-desc('Prepare a new release');
-task('prepare', [
-	'artisan:config:cache',
-	'artisan:route:cache',
+/**
+ * Main deploy task.
+ */
+desc('Deploys your project');
+task('deploy', [
+	'deploy:prepare',
+    'deploy:vendors',
+    'artisan:storage:link',
+    'artisan:config:cache',
+    'artisan:route:cache',
+    'artisan:view:cache',
 	'npm:install',
-	'npm:run:production'
+	'npm:run:production',
+    'deploy:publish',
 ]);
-
-// Prepare app before symlinking new release.
-before('deploy:symlink', 'prepare');
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
