@@ -10,7 +10,7 @@ set('application', 'underground.works');
 set('repository', 'https://github.com/underground-works/website.git');
 
 // Shared files/dirs between deploys
-add('shared_files', [ 'public/clockwork' ]);
+add('shared_files', [ 'public/clockwork', 'database/database.sqlite' ]);
 set('writable_dirs', []);
 
 set('default_stage', 'production');
